@@ -32,10 +32,12 @@ public class FrmG06 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtNumero1 = new javax.swing.JTextField();
-        txtNumero2 = new javax.swing.JTextField();
-        btnCalcular = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
+        txtNumero1 = new javax.swing.JTextField();
+        txtNumero4 = new javax.swing.JTextField();
+        txtNumero5 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -55,35 +57,30 @@ public class FrmG06 extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        jLabel1.setText("EJERCICIO 06 JAVA");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("EJERCICIO 07 JAVA");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(40, 0, 380, 50);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MOSTRAR NUMERO MAYOR MEDIO MENOR");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(30, 50, 400, 50);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("INGRESAR NUMEROS");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(120, 100, 210, 26);
 
-        txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNumero1KeyPressTxtNumber1(evt);
-            }
-        });
-        getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(60, 140, 330, 30);
-
-        txtNumero2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNumero2keyPressTxtNumero2(evt);
-            }
-        });
-        getContentPane().add(txtNumero2);
-        txtNumero2.setBounds(60, 200, 330, 30);
+        lblResultado.setBackground(new java.awt.Color(255, 255, 255));
+        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 12)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(0, 0, 0));
+        lblResultado.setText("0");
+        lblResultado.setOpaque(true);
+        getContentPane().add(lblResultado);
+        lblResultado.setBounds(80, 290, 300, 30);
 
         btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnCalcular.setText("RESULTADO");
@@ -93,15 +90,41 @@ public class FrmG06 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(150, 310, 170, 50);
+        btnCalcular.setBounds(140, 340, 170, 50);
 
-        lblResultado.setBackground(new java.awt.Color(255, 255, 255));
-        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 12)); // NOI18N
-        lblResultado.setForeground(new java.awt.Color(0, 0, 0));
-        lblResultado.setText("0");
-        lblResultado.setOpaque(true);
-        getContentPane().add(lblResultado);
-        lblResultado.setBounds(80, 250, 300, 30);
+        txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumero1KeyPressTxtNumber1(evt);
+            }
+        });
+        getContentPane().add(txtNumero1);
+        txtNumero1.setBounds(70, 130, 330, 30);
+
+        txtNumero4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumero4KeyPressTxtNumber1(evt);
+            }
+        });
+        getContentPane().add(txtNumero4);
+        txtNumero4.setBounds(70, 180, 330, 30);
+
+        txtNumero5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumero5ActionPerformed(evt);
+            }
+        });
+        txtNumero5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumero5KeyPressTxtNumber1(evt);
+            }
+        });
+        getContentPane().add(txtNumero5);
+        txtNumero5.setBounds(70, 230, 320, 30);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descarga SSSSSS(2).jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 470, 440);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -184,28 +207,58 @@ public boolean isNumber (String numero){
         }
     }
 public void calcular(){  
- if(isNumber(txtNumero1.getText())){
-            int Number = Integer.parseInt(txtNumero1.getText());
- }
+    
+if(isNumber(txtNumero1.getText())){
+    if(isNumber(txtNumero4.getText())){
+        if(isNumber(txtNumero5.getText())){
+    }
+
+    int Numero1 = Integer.parseInt(txtNumero1.getText());
+    int Numero2 = Integer.parseInt(txtNumero4.getText());
+    int Numero3 = Integer.parseInt(txtNumero5.getText());
+    if( Numero1  > 0 && Numero2 >0 && Numero3 >0){
+        int Mayor = Math.max(Numero1, Math.max(Numero2, Numero3));
+        int Menor = Math.min(Numero1, Math.min(Numero2, Numero3));
+        int Medio = (Numero1 + Numero2 + Numero3 - Mayor - Menor);
+        lblResultado.setText("mayor"+ " " + Mayor + " " + "medio" + " " + Medio + " " + " menor" + " " + Menor);
+        lblResultado.setVisible(true);
+    }else{
+        JOptionPane.showMessageDialog(this, "ERROR: El numero debe ser mayor a cero", "Error Numero Incorrecto", JOptionPane.ERROR_MESSAGE);
+    }
+    }
+  }
 }
-    private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1
-        // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            
-        }
-    }//GEN-LAST:event_txtNumero1KeyPressTxtNumber1
-
-    private void txtNumero2keyPressTxtNumero2(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero2keyPressTxtNumero2
-        // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            
-        }
-    }//GEN-LAST:event_txtNumero2keyPressTxtNumero2
-
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         
+        calcular();
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+    
+            calcular();
+        }
+    }//GEN-LAST:event_txtNumero1KeyPressTxtNumber1
+
+    private void txtNumero4KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero4KeyPressTxtNumber1
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcular();
+        }
+    }//GEN-LAST:event_txtNumero4KeyPressTxtNumber1
+
+    private void txtNumero5KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero5KeyPressTxtNumber1
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcular();
+        }
+    }//GEN-LAST:event_txtNumero5KeyPressTxtNumber1
+
+    private void txtNumero5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumero5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,6 +309,7 @@ public void calcular(){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
@@ -263,7 +317,8 @@ public void calcular(){
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JTextField txtNumero1;
-    private javax.swing.JTextField txtNumero2;
+    private javax.swing.JTextField txtNumero4;
+    private javax.swing.JTextField txtNumero5;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -55,9 +55,10 @@ public class FrmG05 extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText(" INGRESE UNA FECHA EN FORMATO AAAAMMDD");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 70, 480, 26);
+        jLabel2.setBounds(10, 60, 480, 26);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -65,12 +66,13 @@ public class FrmG05 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(50, 110, 420, 40);
+        txtNumero1.setBounds(20, 90, 420, 40);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("RESULTADO");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 170, 150, 26);
+        jLabel3.setBounds(180, 140, 150, 26);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 18)); // NOI18N
@@ -78,7 +80,7 @@ public class FrmG05 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(50, 210, 420, 30);
+        lblResultado.setBounds(20, 170, 420, 30);
 
         btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnCalcular.setText("Calcular");
@@ -88,17 +90,17 @@ public class FrmG05 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(190, 280, 130, 40);
+        btnCalcular.setBounds(180, 220, 130, 40);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EJERCICIO JAVA 05");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(80, 20, 369, 51);
+        jLabel1.setBounds(40, 10, 369, 51);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bfb94e54c45afd24384db5ad32d71d15.gif"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 510, 350);
+        jLabel4.setBounds(0, -40, 470, 370);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -184,14 +186,21 @@ public boolean isNumber (String numero){
          if(isNumber(txtNumero1.getText())){
              
              String fecha = String.valueOf(txtNumero1.getText());
-            String año = String.valueOf(fecha.substring(0, 4));
-        String mes = String.valueOf(fecha.substring(4, 6));
-        String día = String.valueOf(fecha.substring(6, 8));
-          
-            lblResultado.setText("Día: " + " " + día  + "  " +"Mes: " + mes + "   " + "Año:" +" "+ año);
+            int año = Integer.parseInt(fecha.substring(0, 4));
+        int mes = Integer.parseInt(fecha.substring(4, 6));
+        int dia = Integer.parseInt(fecha.substring(6, 8));
+         if (año > 0 && mes > 0 && dia > 0) {
+          if (fecha.length() != 8) {
+            JOptionPane.showMessageDialog(null, "La fecha debe tener 8 dígitos.");
+             return;
+              }
+            lblResultado.setText("Día: " + " " + dia  + "  " +"Mes: " + mes + "   " + "Año:" +" "+ año);
             
             lblResultado.setVisible(true);
-            
+         }
+         else {
+                JOptionPane.showMessageDialog(this,"la fecha esta fuera del rango");
+            }
         }
     }
     private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1

@@ -35,7 +35,7 @@ public class FrmG014 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtNumero1 = new javax.swing.JTextField();
         lblResultado = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -62,22 +62,22 @@ public class FrmG014 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(170, 290, 130, 40);
+        btnCalcular.setBounds(70, 270, 130, 40);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jLabel1.setText("EJERCICIO 14 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(73, 34, 380, 50);
+        jLabel1.setBounds(20, 10, 380, 50);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel2.setText(" CADENA PALINDROMA");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 80, 320, 50);
+        jLabel2.setBounds(30, 50, 320, 50);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel3.setText("Ingrese una cadena de caracteres:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(100, 130, 426, 26);
+        jLabel3.setBounds(30, 100, 426, 26);
 
         txtNumero1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +90,7 @@ public class FrmG014 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(90, 170, 330, 30);
+        txtNumero1.setBounds(30, 140, 230, 40);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 10)); // NOI18N
@@ -98,12 +98,12 @@ public class FrmG014 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(60, 220, 420, 30);
+        lblResultado.setBounds(30, 200, 230, 40);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 580, 390);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/200w.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 300, 390);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -174,19 +174,9 @@ public class FrmG014 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumber (String numero){
-  try{
-            int Number = Integer.parseInt(numero);
-            return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
-    }
+
 public void calcularCacracter(){
-    if(isNumber(txtNumero1.getText())){
+   
              
         String cadena = String.valueOf(txtNumero1.getText());
         
@@ -197,7 +187,7 @@ public void calcularCacracter(){
         boolean esPalindromo = cadena.equals(cadenaInvertida);
         lblResultado.setText((esPalindromo) ?  "La cadena '" + cadena + "' es palíndroma." :  "La cadena '" + cadena + "' no es palíndroma.");
      lblResultado.setVisible(true);
-    }
+    
 }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
@@ -265,7 +255,7 @@ public void calcularCacracter(){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;

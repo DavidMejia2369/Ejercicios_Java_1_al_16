@@ -36,7 +36,7 @@ public class FrmG02 extends javax.swing.JFrame {
         lblResultado = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -55,15 +55,17 @@ public class FrmG02 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NUMEROS PARES E IMPARES");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(142, 91, 300, 26);
+        jLabel2.setBounds(20, 60, 190, 18);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NUMERO");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 130, 180, 26);
+        jLabel3.setBounds(70, 90, 120, 26);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -71,12 +73,13 @@ public class FrmG02 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(140, 170, 270, 40);
+        txtNumero1.setBounds(20, 120, 190, 40);
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("RESULTADO");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(140, 230, 270, 26);
+        jLabel4.setBounds(60, 170, 140, 26);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 18)); // NOI18N
@@ -84,9 +87,9 @@ public class FrmG02 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(150, 270, 260, 40);
+        lblResultado.setBounds(30, 200, 180, 40);
 
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jButton1.setText("RESULTADO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,17 +97,18 @@ public class FrmG02 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(210, 360, 161, 50);
+        jButton1.setBounds(60, 270, 120, 30);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
-        jLabel1.setText("EJERCICIO 02 JAVA ");
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("EJERCICIO 02 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 10, 530, 67);
+        jLabel1.setBounds(40, 30, 160, 21);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 570, 500);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/5816f064d450fae066794dfb0e0bf505.gif"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, -10, 250, 350);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -257,7 +261,7 @@ public boolean isNumber (String numero){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;

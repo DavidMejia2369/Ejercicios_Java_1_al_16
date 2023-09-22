@@ -55,15 +55,15 @@ public class FrmG04 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setText("EJERCICIO JAVA 04");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 0, 390, 67);
+        jLabel1.setBounds(30, 30, 190, 40);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel3.setText("NUMERO");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 110, 90, 26);
+        jLabel3.setBounds(80, 100, 90, 26);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -71,7 +71,7 @@ public class FrmG04 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(60, 150, 300, 30);
+        txtNumero1.setBounds(20, 130, 190, 30);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 12)); // NOI18N
@@ -79,7 +79,7 @@ public class FrmG04 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(60, 240, 300, 30);
+        lblResultado.setBounds(20, 180, 190, 30);
 
         btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnCalcular.setText("RESULTADO");
@@ -89,17 +89,16 @@ public class FrmG04 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(120, 300, 170, 50);
+        btnCalcular.setBounds(40, 240, 170, 50);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel2.setText("MULTIPLOS DE DOS O TRES");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 70, 270, 26);
+        jLabel2.setBounds(20, 70, 270, 21);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel5.setText("jLabel5");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/animated-wallpaper-240x320px-acegif-13 (1).gif"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 430, 370);
+        jLabel5.setBounds(0, 0, 240, 370);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -170,7 +169,7 @@ public class FrmG04 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
- public boolean isNumber (String numero){
+ public boolean Multiplo (String numero){
   try{
             int Number = Integer.parseInt(numero);
             return true;
@@ -183,7 +182,7 @@ public class FrmG04 extends javax.swing.JFrame {
     }
     
     public void calcularMultiplo(){       
-        if(isNumber(txtNumero1.getText())){
+        if(Multiplo(txtNumero1.getText())){
             int Number = Integer.parseInt(txtNumero1.getText());
             if(Number > 0){
                 

@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
  */
-
 /**
  *
  * @author Angela
@@ -33,8 +32,9 @@ public class FrmG12 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtNumero1 = new javax.swing.JTextField();
         lblResultado = new javax.swing.JLabel();
+        txtNumero1 = new javax.swing.JTextField();
+        lblResultado1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -54,7 +54,7 @@ public class FrmG12 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,30 +62,25 @@ public class FrmG12 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(190, 280, 130, 40);
+        btnCalcular.setBounds(40, 210, 100, 20);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EJERCICIO 12 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(73, 34, 380, 50);
+        jLabel1.setBounds(20, 0, 390, 50);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NUMERO PAR O CAPICUA");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(140, 90, 320, 50);
+        jLabel2.setBounds(20, 30, 320, 30);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("INGRESE UN NUMER0");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(150, 150, 426, 26);
-
-        txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNumero1KeyPressTxtNumber1(evt);
-            }
-        });
-        getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(90, 190, 330, 30);
+        jLabel3.setBounds(20, 60, 426, 26);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 10)); // NOI18N
@@ -93,12 +88,33 @@ public class FrmG12 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(50, 240, 420, 30);
+        lblResultado.setBounds(20, 130, 140, 20);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        txtNumero1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumero1ActionPerformed(evt);
+            }
+        });
+        txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumero1KeyPressTxtNumber1(evt);
+            }
+        });
+        getContentPane().add(txtNumero1);
+        txtNumero1.setBounds(30, 100, 110, 20);
+
+        lblResultado1.setBackground(new java.awt.Color(255, 255, 255));
+        lblResultado1.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
+        lblResultado1.setForeground(new java.awt.Color(0, 0, 0));
+        lblResultado1.setText("0");
+        lblResultado1.setOpaque(true);
+        getContentPane().add(lblResultado1);
+        lblResultado1.setBounds(20, 170, 140, 20);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descarga (4).jpg"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 510, 350);
+        jLabel4.setBounds(0, -150, 180, 590);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -169,39 +185,52 @@ public class FrmG12 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumber (String numero){
-  try{
+    public boolean NUMERO (String numero) {
+        try {
             int Number = Integer.parseInt(numero);
             return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
-public void calcularNumero(){
-    if(isNumber(txtNumero1.getText())){
-             
-             int numero = Integer.parseInt(txtNumero1.getText());
- int numeroDeCifras = 0;
-        while (numero > 0) {
-            numeroDeCifras++;
-            numero /= 10;
+
+    public void calcularNumero() {
+        if (NUMERO(txtNumero1.getText())) {
+            int numero = Integer.parseInt(txtNumero1.getText());
+            if (numero > 0) {
+                if (numero % 2 == 0) {
+                    lblResultado.setText("el numero" + " " + numero + " " + "es par ");
+
+                } else {
+                    lblResultado.setText("el numero" + " " + numero + " " + "es impar ");
+                }
+
+                if (esCapicua(numero)) {
+                    lblResultado1.setText("el numero" + " " + numero + " " + "es capicua");
+
+                } else {
+                    lblResultado1.setText("el numero" + " " + numero + " " + "no es capicua");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "ERROR: El numero debe ser mayor a cero", "Error Numero Incorrecto", JOptionPane.ERROR_MESSAGE);
+            }
         }
-         boolean esPar = numeroDeCifras % 2 == 0;
-         int numeroInvertido = 0;
-        int numeroOriginal = numero;
-        while (numero > 0) {
-            numeroInvertido = numeroInvertido * 10 + numero % 10;
-            numero /= 10;
-        }
-          boolean esCapicua = numeroInvertido == numeroOriginal;
-        lblResultado.setText( "El número" + numero + " es par: " + esPar );
-        lblResultado.setText( "El número" + numero + " es capicúa: " + esCapicua);
-         lblResultado.setVisible(true);
     }
-}
+
+    public static boolean esCapicua(int numero) {
+        int numeroInvertido = 0;
+        int numeroOriginal = numero;
+
+        while (numero != 0) {
+            int digito = numero % 10;
+            numeroInvertido = numeroInvertido * 10 + digito;
+            numero /= 10;
+        }
+        return numeroOriginal == numeroInvertido;
+    }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         calcularNumero();
@@ -209,10 +238,14 @@ public void calcularNumero(){
 
     private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1
         // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             calcularNumero();
         }
     }//GEN-LAST:event_txtNumero1KeyPressTxtNumber1
+
+    private void txtNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumero1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,6 +298,7 @@ public void calcularNumero(){
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblResultado1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;

@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
  */
-
 /**
  *
  * @author Angela
@@ -62,22 +61,24 @@ public class FrmG11 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(190, 280, 130, 40);
+        btnCalcular.setBounds(150, 250, 130, 40);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        jLabel1.setText("EJERCICIO 10 JAVA");
+        jLabel1.setText("EJERCICIO 11 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(73, 34, 380, 50);
+        jLabel1.setBounds(50, 10, 380, 50);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 255, 0));
         jLabel2.setText("MOSTRAR EN ORDEN INVERSO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 90, 320, 50);
+        jLabel2.setBounds(80, 50, 320, 50);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("INGRESE NUMEROS ENTEROS");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(120, 150, 426, 26);
+        jLabel3.setBounds(80, 100, 426, 26);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -85,20 +86,19 @@ public class FrmG11 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(100, 190, 330, 30);
+        txtNumero1.setBounds(60, 160, 330, 30);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
-        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 10)); // NOI18N
+        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 18)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(0, 0, 0));
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(50, 240, 420, 30);
+        lblResultado.setBounds(20, 210, 420, 30);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/38c3b829d4a034b1801bd1a62adabc74.gif"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 510, 340);
+        jLabel4.setBounds(0, 0, 460, 340);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -169,30 +169,29 @@ public class FrmG11 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumber (String numero){
-  try{
-            int Number = Integer.parseInt(numero);
-            return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-            return false;
+
+    public void calcularNumero() {
+
+        long numero = 0;
+        int numero1 = 0, reston, invertido = 0;
+        if (("-".equals(txtNumero1.getText().substring(1, 1)))) {
+            JOptionPane.showMessageDialog(this, "ingrese un numero valido");
+            txtNumero1.setText("");
+        } else {
+            numero = Long.parseLong(txtNumero1.getText());
+            String numeroStr = String.valueOf(numero);
+            String con = "";
+            for (int i = numeroStr.length() - 1; i >= 0; i--) {
+                numero1 = Character.getNumericValue(numeroStr.charAt(i));
+                con = con + numero1;
+            }
+
+            lblResultado.setText("El número invertido es: " + con);
         }
-    }
-public void calcularNumero(){
-    if(isNumber(txtNumero1.getText())){
-             
-             int numero = Integer.parseInt(txtNumero1.getText());
-             int numeroInvertido = 0;
-              while (numero > 0) {
-            numeroInvertido = numeroInvertido * 10 + numero % 10;
-            numero /= 10;
-        }
-        lblResultado.setText( "El número invertido es: " + numeroInvertido);
         lblResultado.setVisible(true);
     }
-}
+
+
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         calcularNumero();
@@ -200,7 +199,7 @@ public void calcularNumero(){
 
     private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1
         // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             calcularNumero();
         }
     }//GEN-LAST:event_txtNumero1KeyPressTxtNumber1

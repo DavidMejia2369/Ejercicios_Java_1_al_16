@@ -38,6 +38,7 @@ public class FrmG03 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -57,14 +58,16 @@ public class FrmG03 extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("RADIO DE UN CIRCULO");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(140, 71, 220, 26);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel3.setText("NUMERO");
+        jLabel3.setForeground(new java.awt.Color(153, 0, 204));
+        jLabel3.setText("INGRESE EL RADIO DEL CIRCULO");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(90, 103, 120, 26);
+        jLabel3.setBounds(100, 110, 330, 26);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -75,17 +78,18 @@ public class FrmG03 extends javax.swing.JFrame {
         txtNumero1.setBounds(90, 140, 330, 30);
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel4.setText("RADIO DEL CIRCULO");
+        jLabel4.setForeground(new java.awt.Color(102, 0, 153));
+        jLabel4.setText("AREA DEL CIRCULO");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(90, 190, 250, 26);
+        jLabel4.setBounds(170, 190, 250, 26);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
-        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 18)); // NOI18N
+        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 8)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(0, 0, 0));
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(90, 230, 330, 30);
+        lblResultado.setBounds(60, 230, 390, 30);
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton1.setText("CALCULAR");
@@ -98,14 +102,17 @@ public class FrmG03 extends javax.swing.JFrame {
         jButton1.setBounds(178, 311, 157, 58);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("EJERCICIO JAVA 03");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(66, 14, 369, 51);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322 (Pequeña).jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(0, 0, 490, 390);
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 490, 390);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -194,7 +201,9 @@ public class FrmG03 extends javax.swing.JFrame {
             if(Number > 0){
                 DecimalFormat df = new DecimalFormat("0.00");
                 double Resultado = Math.PI * Math.pow(Number, 2);
-                lblResultado.setText(df.format(Resultado));
+                lblResultado.setText("El area del circulo es" + " " +  Resultado);
+                
+                
                 lblResultado.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(this, "ERROR: El numero debe ser mayor a cero", "Error Numero Incorrecto", JOptionPane.ERROR_MESSAGE);
@@ -211,6 +220,7 @@ public class FrmG03 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         calcularRadio();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -264,6 +274,7 @@ public class FrmG03 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;

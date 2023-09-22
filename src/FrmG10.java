@@ -35,6 +35,7 @@ public class FrmG10 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtNumero1 = new javax.swing.JTextField();
         lblResultado = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -97,8 +98,10 @@ public class FrmG10 extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 510, 340);
+        jPanel2.add(jLabel4);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 0, 510, 370);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -184,11 +187,21 @@ public void calcularNota(){
     if(isNumber(txtNumero1.getText())){
              
              int segundos = Integer.parseInt(txtNumero1.getText());
+             if (segundos > 0) {
               int horas = segundos / 3600;
-        int minutos = (segundos % 3600) / 60;
-        segundos = segundos % 60;
+        int minutos = (segundos  / 60);
+        segundos = segundos ;
+             
+             
+        
          lblResultado.setText("El tiempo invertido en el examen es: " + horas + " horas, " + minutos + " minutos y " + segundos + " segundos");
                  lblResultado.setVisible(true);
+             }
+             else{
+         JOptionPane.showMessageDialog(this, "ERROR: El numero debe ser mayor a cero", "Error Numero Incorrecto", JOptionPane.ERROR_MESSAGE);
+    }
+        
+                 
 }
 }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
@@ -253,6 +266,7 @@ public void calcularNota(){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;

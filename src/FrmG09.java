@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
  */
-
 /**
  *
  * @author Angela
@@ -62,22 +61,25 @@ public class FrmG09 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(190, 280, 130, 40);
+        btnCalcular.setBounds(120, 260, 130, 40);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EJERCICIO 09 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(73, 34, 380, 50);
+        jLabel1.setBounds(60, 10, 380, 50);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("VERIFICAR DIA MES ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(168, 96, 233, 50);
+        jLabel2.setBounds(80, 60, 233, 50);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("INGRESAR UN NUMERO SEGUN EL MES");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(73, 152, 426, 26);
+        jLabel3.setBounds(40, 110, 280, 21);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -85,7 +87,7 @@ public class FrmG09 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(100, 190, 330, 30);
+        txtNumero1.setBounds(50, 140, 260, 30);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 18)); // NOI18N
@@ -93,12 +95,11 @@ public class FrmG09 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(55, 238, 420, 30);
+        lblResultado.setBounds(50, 200, 260, 30);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descarga (31).jpg"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 510, 340);
+        jLabel4.setBounds(0, 0, 350, 340);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -169,83 +170,77 @@ public class FrmG09 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumber (String numero){
-  try{
+    public boolean isNumber(String numero) {
+        try {
             int Number = Integer.parseInt(numero);
             return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
-public void calcularFecha(){       
-         if(isNumber(txtNumero1.getText())){
-             
-             int mes = Integer.parseInt(txtNumero1.getText());
-             if (mes < 1 || mes > 12) {
-            JOptionPane.showMessageDialog(null, "El número ingresado no es válido");
-            return;
-             }
-             switch (mes) {
-            case 1:
-                lblResultado.setText("enero");
-                 lblResultado.setVisible(true);
-                break;
-            case 2:
-                 lblResultado.setText("febrero");
-                   lblResultado.setVisible(true);
-                break;
-            case 3:
-                 lblResultado.setText("marzo"); 
-                   lblResultado.setVisible(true);
-                break;
-            case 4:
-           
-                 lblResultado.setText("abril");
-                   lblResultado.setVisible(true);
-                break;
-            case 5:
-                lblResultado.setText("mayo");
-                  lblResultado.setVisible(true);
-                break;
-            case 6:
-                lblResultado.setText("junio");
-                lblResultado.setVisible(true);
-                break;
-            case 7:
-                lblResultado.setText("julio");
-                lblResultado.setVisible(true);
-                break;
-            case 8:
-               lblResultado.setText("agosto");
-               lblResultado.setVisible(true);
-                break;
-            case 9:
-               lblResultado.setText("septiembre");
-               lblResultado.setVisible(true);
-                break;
-            case 10:
-                lblResultado.setText("octubre");
-                lblResultado.setVisible(true);
-                break;
-            case 11:
-                lblResultado.setText("noviembre");
-                lblResultado.setVisible(true);
-                break;
-            case 12:
-                lblResultado.setText("diciembre");
-                lblResultado.setVisible(true);
-                break;
-        }
-    }
-         
-            
-          
-}
 
-         
+    public void calcularFecha() {
+            if(isNumber(txtNumero1.getText())){
+    int Numero = Integer.parseInt(txtNumero1.getText());
+    if (Numero >= 1 && Numero <= 12) {
+    String mes;
+    switch (Numero) {
+                case 1:
+                    mes = "Enero";
+                    break;
+                case 2:
+                    mes = "Febrero";
+                    break;
+                case 3:
+                    mes = "Marzo";
+                    break;
+                case 4:
+                    mes = "Abril";
+                    break;
+                case 5:
+                    mes = "Mayo";
+                    break;
+                case 6:
+                    mes = "Junio";
+                    break;
+                case 7:
+                    mes = "Julio";
+                    break;
+                case 8:
+                    mes = "Agosto";
+                    break;
+                case 9:
+                    mes = "Septiembre";
+                    break;
+                case 10:
+                    mes = "Octubre";
+                    break;
+                case 11:
+                    mes = "Noviembre";
+                    break;
+                case 12:
+                    mes = "Diciembre";
+                    break;
+                default:
+                    mes = "";
+                    break;
+                   
+            }
+    
+     lblResultado.setText("el mes es : "  + mes );
+                    lblResultado.setVisible(true);
+    
+     }else{
+         JOptionPane.showMessageDialog(this, "ERROR: El numero debe ser mayor a cero", "Error Numero Incorrecto", JOptionPane.ERROR_MESSAGE);
+    }
+}
+}
+    
+
+
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
@@ -254,7 +249,7 @@ public void calcularFecha(){
 
     private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1
         // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             calcularFecha();
         }
     }//GEN-LAST:event_txtNumero1KeyPressTxtNumber1

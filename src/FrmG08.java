@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
  */
-
 /**
  *
  * @author Angela
@@ -59,14 +58,16 @@ public class FrmG08 extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EJERCICIO 08 JAVA");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(73, 34, 380, 50);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("VERIFICAR FECHA ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(168, 96, 182, 50);
+        jLabel2.setBounds(130, 100, 250, 50);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -74,9 +75,10 @@ public class FrmG08 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(100, 190, 330, 30);
+        txtNumero1.setBounds(50, 220, 420, 50);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("INGRESAR FECHA EN FORMATO AAAAMMDD");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(55, 152, 426, 26);
@@ -87,7 +89,7 @@ public class FrmG08 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(55, 238, 420, 30);
+        lblResultado.setBounds(50, 290, 420, 50);
 
         btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnCalcular.setText("Calcular");
@@ -97,9 +99,9 @@ public class FrmG08 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(200, 296, 130, 40);
+        btnCalcular.setBounds(190, 360, 130, 40);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images (678).jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(0, 0, 510, 430);
@@ -173,67 +175,73 @@ public class FrmG08 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumber (String numero){
-  try{
+    public boolean isNumber(String numero) {
+        try {
             int Number = Integer.parseInt(numero);
             return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
-public void calcularFecha(){       
-         if(isNumber(txtNumero1.getText())){
-             
-             String fecha = String.valueOf(txtNumero1.getText());
-              if (fecha.length() != 8) {
-            JOptionPane.showMessageDialog(null, "La fecha debe tener 8 dígitos.");
-             return;
-              }
-           int año = Integer.parseInt(fecha.substring(0, 4));
-        int mes = Integer.parseInt(fecha.substring(4, 6));
-        int día = Integer.parseInt(fecha.substring(6, 8));
-          if (año < 1000 || año > 9999) {
-            JOptionPane.showMessageDialog(null, "El año debe ser un número de 4 dígitos.");
-            return;
-        }
-           if (mes < 1 || mes > 12) {
-            JOptionPane.showMessageDialog(null, "El mes debe ser un número entre 1 y 12.");
-            return;
-        }
-           if (día < 1 || día > 31) {
-            JOptionPane.showMessageDialog(null, "El día debe ser un número entre 1 y 31.");
-            return;
-        }
+
+    public void calcularFecha() {
+        if (isNumber(txtNumero1.getText())) {
+
+            String fecha = String.valueOf(txtNumero1.getText());
+            if (fecha.length() != 8) {
+                JOptionPane.showMessageDialog(this, "La fecha debe tener 8 dígitos.");
+                return;
+            }
+            int año = 0;
+            int mes = 0;
+            int dia = 0;
+            
+            año = Integer.parseInt(fecha.substring(0, 4));
+            mes = Integer.parseInt(fecha.substring(4, 6));
+            dia = Integer.parseInt(fecha.substring(6, 8));
+            if (año > 0 && mes > 0 && dia > 0) {
+                 
+            if (año < 1000 || año > 2023) {
+                JOptionPane.showMessageDialog(this, "El año esta fuera de rango.");
+                return;
+            }
+            if (mes < 1 || mes > 12) {
+                JOptionPane.showMessageDialog(this, "El mes debe ser un número entre 1 y 12.");
+                return;
+            }
+            if (dia < 1 || dia > 31) {
+                JOptionPane.showMessageDialog(this, "El día debe ser un número entre 1 y 31.");
+                return;
+            }
             if (mes == 2) {
-            if (año % 4 == 0 && (año % 100 != 0 || año % 400 == 0)) {
-                if (día > 29) {
-                    JOptionPane.showMessageDialog(null, "Febrero solo tiene 29 días en años bisiestos.");
-                    return;
-                }
-                 } else {
-                if (día > 28) {
-                    JOptionPane.showMessageDialog(null, "Febrero solo tiene 28 días en años no bisiestos.");
-                    return;
+       
+                    if (dia > 28) {
+                        JOptionPane.showMessageDialog(this, "Febrero solo tiene 28 días en años bisiestos.");
+                        return;
+                    }     
+            } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+                if (dia > 30) {
+                    JOptionPane.showMessageDialog(this, "Son meses de 30 dias solamente");
                 }
             }
-             } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
-            if (día > 30) {
-                JOptionPane.showMessageDialog(null, "sno meses de 30 dias solamente");
+            lblResultado.setText("Día: " + " " + dia + "  " + "Mes: " + mes + "   " + "Año:" + " " + año);
+
+            lblResultado.setVisible(true);   
             }
-             }
-            lblResultado.setText("Día: " + " " + día  + "  " +"Mes: " + mes + "   " + "Año:" +" "+ año);
+            else {
+                JOptionPane.showMessageDialog(this,"la fecha esta fuera del rango");
+            }
             
-            lblResultado.setVisible(true);
+        } 
             
-        }
     }
     private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1
         // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-           calcularFecha();
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularFecha();
         }
     }//GEN-LAST:event_txtNumero1KeyPressTxtNumber1
 

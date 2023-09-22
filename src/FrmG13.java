@@ -64,22 +64,22 @@ public class FrmG13 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(230, 330, 130, 40);
+        btnCalcular.setBounds(60, 280, 130, 30);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setText("EJERCICIO 13 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(73, 34, 380, 50);
+        jLabel1.setBounds(30, 10, 380, 50);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel2.setText("CADENA DE CARACTERES");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 80, 320, 50);
+        jLabel2.setBounds(0, 50, 320, 50);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel3.setText("Ingrese una cadena de caracteres:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(120, 200, 426, 26);
+        jLabel3.setBounds(10, 170, 230, 21);
 
         txtNumero1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,7 +92,7 @@ public class FrmG13 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(90, 170, 330, 30);
+        txtNumero1.setBounds(20, 140, 190, 30);
 
         txtNumero2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -100,7 +100,7 @@ public class FrmG13 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero2);
-        txtNumero2.setBounds(100, 240, 330, 30);
+        txtNumero2.setBounds(20, 200, 190, 30);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 10)); // NOI18N
@@ -108,17 +108,16 @@ public class FrmG13 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(50, 290, 420, 30);
+        lblResultado.setBounds(30, 240, 180, 30);
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel5.setText("Ingrese un caracteres:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(160, 140, 210, 26);
+        jLabel5.setBounds(20, 100, 210, 26);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel6.setText("jLabel6");
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QIZE.gif"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 580, 390);
+        jLabel6.setBounds(0, -30, 240, 400);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -189,20 +188,25 @@ public class FrmG13 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumber (String numero){
-  try{
-            int Number = Integer.parseInt(numero);
-            return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+public static boolean Letras(String cadena) {
+    for (int x = 0; x < cadena.length(); x++) {
+        char c = cadena.charAt(x);
+     
+        if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == ' ')) {
+          JOptionPane.showMessageDialog(null,  "El texto   no es un letra");
+             
+                    
             return false;
         }
+       
     }
+    return true;
+     
+}
 public void calcularCacracter(){
-    if(isNumber(txtNumero1.getText())){
-             
+   
+          if (Letras(txtNumero1.getText())) {   
+               if (Letras(txtNumero2.getText())) {  
         String caracter = String.valueOf(txtNumero1.getText());
         String cadena= String.valueOf(txtNumero2.getText());
          int contador = 0;
@@ -213,7 +217,9 @@ public void calcularCacracter(){
         }
         lblResultado.setText( "El número de ocurrencias del carácter '" + caracter + "' en la cadena '" + cadena + "' es: " + contador);
      lblResultado.setVisible(true);
-    }
+    
+}
+          }
 }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:

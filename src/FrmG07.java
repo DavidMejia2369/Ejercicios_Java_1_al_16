@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
  */
-
 /**
  *
  * @author Angela
@@ -56,20 +55,20 @@ public class FrmG07 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jLabel1.setText("EJERCICIO 07 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(83, 36, 380, 50);
+        jLabel1.setBounds(60, 20, 380, 50);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel2.setText("CALCULAR HIPOTENUSA TRIANGULO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(95, 104, 350, 50);
+        jLabel2.setBounds(10, 70, 350, 50);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel3.setText("INGRESAR NUMEROS");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(172, 160, 210, 26);
+        jLabel3.setBounds(80, 120, 210, 26);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -77,7 +76,7 @@ public class FrmG07 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(106, 204, 330, 30);
+        txtNumero1.setBounds(20, 160, 330, 30);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 18)); // NOI18N
@@ -85,7 +84,7 @@ public class FrmG07 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(60, 300, 420, 30);
+        lblResultado.setBounds(30, 280, 320, 30);
 
         txtNumero2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -93,7 +92,7 @@ public class FrmG07 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero2);
-        txtNumero2.setBounds(106, 252, 330, 30);
+        txtNumero2.setBounds(20, 220, 330, 30);
 
         btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnCalcular.setText("Calcular");
@@ -103,10 +102,9 @@ public class FrmG07 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(190, 360, 130, 40);
+        btnCalcular.setBounds(100, 340, 130, 40);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1308322.jpeg"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/12b86b445200953e6eec865a6dfe9303.gif"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 530, 410);
 
@@ -179,42 +177,48 @@ public class FrmG07 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumber (String numero){
-  try{
+    public boolean isNumber(String numero) {
+        try {
             int Number = Integer.parseInt(numero);
             return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
+        } catch (NumberFormatException NFE) {
+            JOptionPane.showMessageDialog(this,
+                    "El texto " + numero + " no es un numero valido",
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
-public void calcularHipotenusa(){       
-         if(isNumber(txtNumero1.getText())){
-            
-             int cateto1 = Integer.parseInt(txtNumero1.getText());
-             int cateto2= Integer.parseInt(txtNumero2.getText());
-          
-             DecimalFormat df = new DecimalFormat("0.00");
-             double hipotenusa = Math.sqrt(Math.pow(cateto1, 2) + Math.pow(cateto2, 2));
-           
-            lblResultado.setText("La hipotenusa del triángulo es: " + hipotenusa);
-            lblResultado.setVisible(true);
-            
+
+    public void calcularHipotenusa() {
+        if (isNumber(txtNumero1.getText())) {
+            if (isNumber(txtNumero2.getText())) {
+
+            int cateto1 = Integer.parseInt(txtNumero1.getText());
+            int cateto2 = Integer.parseInt(txtNumero2.getText());
+
+            DecimalFormat df = new DecimalFormat("0.00");
+            double hipotenusa = Math.sqrt(Math.pow(cateto1, 2) + Math.pow(cateto2, 2));
+            if (cateto1 > 0 && cateto2 > 0) {
+                lblResultado.setText("La hipotenusa del triángulo es: " + hipotenusa);
+                lblResultado.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "ERROR: El numero debe ser mayor a cero", "Error Numero Incorrecto", JOptionPane.ERROR_MESSAGE);
+            }
+        }
         }
     }
     private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1
         // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-calcularHipotenusa();
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularHipotenusa();
         }
     }//GEN-LAST:event_txtNumero1KeyPressTxtNumber1
 
     private void txtNumero2keyPressTxtNumero2(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero2keyPressTxtNumero2
         // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-calcularHipotenusa();
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularHipotenusa();
         }
     }//GEN-LAST:event_txtNumero2keyPressTxtNumero2
 

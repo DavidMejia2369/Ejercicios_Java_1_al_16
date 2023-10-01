@@ -64,22 +64,25 @@ public class FrmG13 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(60, 280, 130, 30);
+        btnCalcular.setBounds(80, 280, 130, 30);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EJERCICIO 13 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 10, 380, 50);
+        jLabel1.setBounds(70, 0, 380, 50);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CADENA DE CARACTERES");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 50, 320, 50);
+        jLabel2.setBounds(40, 40, 320, 60);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("Ingrese una cadena de caracteres:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 170, 230, 21);
+        jLabel3.setBounds(10, 170, 320, 26);
 
         txtNumero1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,7 +95,7 @@ public class FrmG13 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(20, 140, 190, 30);
+        txtNumero1.setBounds(50, 130, 190, 30);
 
         txtNumero2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -100,24 +103,25 @@ public class FrmG13 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero2);
-        txtNumero2.setBounds(20, 200, 190, 30);
+        txtNumero2.setBounds(50, 200, 190, 30);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
-        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 10)); // NOI18N
+        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 8)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(0, 0, 0));
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(30, 240, 180, 30);
+        lblResultado.setBounds(30, 240, 240, 30);
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel5.setText("Ingrese un caracteres:");
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("Ingrese un caracter:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(20, 100, 210, 26);
+        jLabel5.setBounds(50, 90, 210, 26);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QIZE.gif"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QIZ1E.jpg"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, -30, 240, 400);
+        jLabel6.setBounds(0, -30, 300, 400);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -203,7 +207,7 @@ public static boolean Letras(String cadena) {
     return true;
      
 }
-public void calcularCacracter(){
+public void calcularCaracter(){
    
           if (Letras(txtNumero1.getText())) {   
                if (Letras(txtNumero2.getText())) {  
@@ -215,7 +219,7 @@ public void calcularCacracter(){
                 contador++;
             }
         }
-        lblResultado.setText( "El número de ocurrencias del carácter '" + caracter + "' en la cadena '" + cadena + "' es: " + contador);
+        lblResultado.setText( "El caracter que se repite es '" + caracter + "' en la cadena '" + cadena + "' es: " + contador);
      lblResultado.setVisible(true);
     
 }
@@ -223,25 +227,25 @@ public void calcularCacracter(){
 }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-        calcularCacracter();
+        calcularCaracter();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1
         // TODO add your handling code here:
         if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            calcularCacracter();
+            calcularCaracter();
         }
     }//GEN-LAST:event_txtNumero1KeyPressTxtNumber1
 
     private void txtNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero1ActionPerformed
         // TODO add your handling code here:
-         calcularCacracter();
+         calcularCaracter();
     }//GEN-LAST:event_txtNumero1ActionPerformed
 
     private void txtNumero2keyPressTxtNumero2(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero2keyPressTxtNumero2
         // TODO add your handling code here:
         if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-             calcularCacracter();
+             calcularCaracter();
         }
     }//GEN-LAST:event_txtNumero2keyPressTxtNumero2
 

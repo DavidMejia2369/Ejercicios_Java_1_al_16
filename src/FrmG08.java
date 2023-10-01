@@ -57,17 +57,17 @@ public class FrmG08 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EJERCICIO 08 JAVA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(73, 34, 380, 50);
+        jLabel1.setBounds(170, 10, 380, 50);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("VERIFICAR FECHA ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 100, 250, 50);
+        jLabel2.setBounds(180, 40, 250, 50);
 
         txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -75,13 +75,13 @@ public class FrmG08 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNumero1);
-        txtNumero1.setBounds(50, 220, 420, 50);
+        txtNumero1.setBounds(40, 110, 420, 30);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("INGRESAR FECHA EN FORMATO AAAAMMDD");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(55, 152, 426, 26);
+        jLabel3.setBounds(60, 80, 426, 26);
 
         lblResultado.setBackground(new java.awt.Color(255, 255, 255));
         lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 18)); // NOI18N
@@ -89,7 +89,7 @@ public class FrmG08 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(50, 290, 420, 50);
+        lblResultado.setBounds(40, 160, 420, 30);
 
         btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnCalcular.setText("Calcular");
@@ -99,12 +99,11 @@ public class FrmG08 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCalcular);
-        btnCalcular.setBounds(190, 360, 130, 40);
+        btnCalcular.setBounds(180, 220, 130, 30);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images (678).jpg"))); // NOI18N
-        jLabel5.setText("jLabel5");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/9d73d089a72a0f2dc893c2f63561d779.gif"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 510, 430);
+        jLabel5.setBounds(0, -80, 520, 430);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
